@@ -1,2 +1,2 @@
-let quote_array = ["A gentle stream in my heart's river.", "Be my beau.", "Smile. To toss the oceans like the moon.","Cherish these forever","Two droplets, said hi to each other."]
+let quote_array = ["A gentle stream in my heart's river.", "Be my beau.", "Smile. To toss around the oceans like the moon.","Cherish these forever","Two droplets, said hi to each other."]
 const quotes = quote_array.sort(() => Math.random() - 0.5);

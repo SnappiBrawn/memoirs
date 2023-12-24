@@ -39,11 +39,11 @@ nav{
 }
 
 .header{
-    background-color: rgb(2, 16, 19);
-    background-image: url(../images/header-bg.jpeg);
+    background: url(../images/header-bg.jpeg),linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom center;
+    background-blend-mode: overlay;
     text-align: center;
     font-size: 1.5em;
 }
@@ -68,7 +68,7 @@ nav{
 }
 
 .content{
-    background-color: rgb(2, 16, 19);
+    background-color: #000;
     padding: 20px 0px;
     text-align: center;
 }
@@ -83,7 +83,7 @@ nav{
 
 #more:hover{
     cursor: pointer;
-    color: rgb(2, 16, 19);
+    color: #000;
     background-color:rgb(219, 110, 210);
     transition-duration: 200ms;
 }
@@ -135,6 +135,10 @@ nav{
         }
     }
         @media (min-width: 1000px) {
+        .header{
+            background-size: auto;
+            background-position: center center;
+        }
         .content{
             font-size: xx-large;
         }
