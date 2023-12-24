@@ -1,0 +1,1 @@
+let quotes = ["Apple a day, keeps doctor away", "be my boo."]

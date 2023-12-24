@@ -1,0 +1,118 @@
+@font-face {
+    font-family: baseFont;
+    src: url(Oswald-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: fancyFont;
+    src: url(HomemadeApple-Regular.ttf);
+}
+
+@media (min-width: 320px) {
+    #photos {
+    -webkit-column-count: 2;
+    column-count:         2;
+    }
+}
+    @media (min-width: 700px) {
+    #photos {
+    -webkit-column-count: 3;
+    column-count:         3;
+    }
+}
+    @media (min-width: 1000px) {
+    .content{
+        font-size: xx-large;
+    }
+    #photos {
+    -webkit-column-count: 4;
+    column-count:         4;
+    }
+}
+
+*{
+    font-family: baseFont;
+    /* color: rgb(127, 178, 255); */
+    color:rgb(255, 127, 244);
+}
+
+.fancy{
+    font-family: fancyFont;
+}
+
+.quote:nth-child(odd){
+    text-align: right;
+    column-span: all;
+    font-size: 3em;
+    padding: 10%;
+    color:rgb(219, 110, 210)
+}
+
+.quote:nth-child(even){
+    text-align: left;
+    column-span: all;
+    font-size: 3em;
+    padding: 10%;
+    color:rgb(219, 110, 210)
+}
+
+nav{
+    opacity: 0.8
+}
+
+.header{
+    background-color: rgb(2, 16, 19);
+    background-image: url(../images/header-bg.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1)
+        }
+    20% {
+        transform: scale(1.2);
+        color: rgb(255, 127, 159);
+        }
+    100% {
+        transform: scale(1)
+    }
+    }
+
+.piece{
+    font-size: 10em;
+    color:rgb(255, 127, 244);
+    animation: heartbeat 1.25s infinite;
+}
+
+.content{
+    background-color: rgb(2, 16, 19);
+    padding-top: 20px;
+    text-align: center;
+}
+
+
+/* photo collage */
+#photos {
+    /* Prevent vertical gaps */
+    line-height: 0;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 0px;
+    column-count: 4;
+    column-gap: 0px;  
+    padding: 2% 8%;
+    opacity: 0.8;
+    }
+
+#photos img {
+    /* Just in case there are inline attributes */
+    width: 100%;
+    height: auto;
+    padding: 2px;
+    }
+      
+      
