@@ -62,17 +62,38 @@ nav{
     }
 
 .piece{
-    font-size: 10em;
+    font-size: 8em;
     color:rgb(255, 127, 244);
     animation: heartbeat 1.25s infinite;
 }
 
 .content{
     background-color: rgb(2, 16, 19);
-    padding-top: 20px;
+    padding: 20px 0px;
     text-align: center;
 }
 
+/* load more arrow */
+#more{
+    border-radius: 50%;
+    padding: 10px;
+    border:rgb(219, 110, 210) solid 3px;
+    color:rgb(219, 110, 210);
+}
+
+#more:hover{
+    cursor: pointer;
+    color: rgb(2, 16, 19);
+    background-color:rgb(219, 110, 210);
+    transition-duration: 200ms;
+}
+
+.footer{
+    padding: 10px 0;
+    background-color: #000;
+    font-weight: 100;
+    font-size: small;
+}
 
 /* photo collage */
 #photos {
@@ -97,6 +118,11 @@ nav{
         .content{
             font-size: large;
         }
+        #more{
+            width: 45px;
+            font-size: large;
+            padding: 6px 10px;
+        }
         #photos {
         -webkit-column-count: 2;
         column-count:         2;
@@ -111,6 +137,9 @@ nav{
         @media (min-width: 1000px) {
         .content{
             font-size: xx-large;
+        }
+        #more{
+            width: 60px;
         }
         #photos {
         -webkit-column-count: 4;

@@ -13,22 +13,26 @@
         <script>
             var quote_index = 0;
             var current_set = 0;
-            var batch_size = 8;
+            var batch_size = 20;
             function populate_pics(n=current_set){
-                var links = JSON.parse(data).ids
+                var links = data;
                 set = links.slice(batch_size*n,batch_size*(n+1));
+                const scrollY = window.scrollY;
+                if(links.length < batch_size*(n+1)){
+                    document.getElementById("more").style.display = "none";
+                }
                 set.forEach(element => {
                     var x = document.createElement("IMG");
                     x.setAttribute("src", "https://drive.google.com/uc?export=view&id="+element);
                     document.getElementById("photos").appendChild(x);
                 });
-                // https://drive.google.com/uc?export=view&id=1UHSnOlJC-3kpuyuVf_BZPtOKPfpiNAtU
+                window.scrollTo(0, scrollY);
                 current_set += 1;
             }
 
             function add_quote(){
                 var x = document.createElement("H3");
-                x.setAttribute("class","fancy quote");
+                x.setAttribute("class","fancy quote bottom");
                 x.innerHTML = quotes[quote_index]
                 document.getElementById("photos").appendChild(x);
                 quote_index=(quote_index+1) % quotes.length;
@@ -38,13 +42,16 @@
                 populate_pics();
                 add_quote();
             }
+            
+            // var loader = setInterval(load_more,1000);
         </script>
+        
     </head>
     <body>
         <div class="header">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid">
-                  <a class="navbar-brand fs-1" href="#"><i class="fa-brands fa-gratipay"></i>
+                  <a class="navbar-brand fw-bold" href="#"><i class="fa-brands fa-gratipay"></i>
                     Memoirs of a hopeless romantic
                   </a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,13 +81,17 @@
                 </p>
             </div>
         </div>
-        <div class="content" onclick ="load_more()">
+        <div class="content">
             <div>
                 <h2>And it flows like...</h2>
                 <div id="photos">
                     <!-- rendered in js -->
                 </div>
+                <div><span class="fa-solid fa-down-long fs-1" id="more" onclick="load_more()"></span></div>
             </div>
+        </div>
+        <div class="footer">
+            <div class="text-center text-light">Made with <i class="fa-solid fa-heart"></i> by Snappi.</div>
         </div>
     </body>
 </html>

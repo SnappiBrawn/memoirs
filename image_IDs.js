@@ -1,5 +1,4 @@
-let data = `{
-    "ids":["1-YRehSaqzciNbJMv7QuySgz3EolQFQDo",
+let raw_data = ["1-YRehSaqzciNbJMv7QuySgz3EolQFQDo",
     "12mEZTAFVpfnc_wMgXbcu1XqEdEt85EGq",
     "12ntR_EDtBKe8VQG2BqAM63cT7IZVwjPv",
     "15JvifGrti3mzmD2o8JSOSu5-0ALZXljh",
@@ -131,6 +130,6 @@ let data = `{
     "16MnUBh4LMeFK-hi19QyUTPdGuID7kyiF",
     "1ZH8qgQ71kyfyeEFqsGe7yu6IJKk0XDtx",
     "1fghYgcT28TpI0GvJLLIRR15cZltqdm45",
-    "1jqtI496EvJoe5VOVxuLspvgRWZ6PLOSz"]
+    "1jqtI496EvJoe5VOVxuLspvgRWZ6PLOSz"];
 
-}`
+const data = raw_data.sort(() => Math.random() - 0.5);
