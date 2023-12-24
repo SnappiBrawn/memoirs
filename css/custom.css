@@ -8,28 +8,6 @@
     src: url(HomemadeApple-Regular.ttf);
 }
 
-@media (min-width: 320px) {
-    #photos {
-    -webkit-column-count: 2;
-    column-count:         2;
-    }
-}
-    @media (min-width: 700px) {
-    #photos {
-    -webkit-column-count: 3;
-    column-count:         3;
-    }
-}
-    @media (min-width: 1000px) {
-    .content{
-        font-size: xx-large;
-    }
-    #photos {
-    -webkit-column-count: 4;
-    column-count:         4;
-    }
-}
-
 *{
     font-family: baseFont;
     /* color: rgb(127, 178, 255); */
@@ -115,4 +93,27 @@ nav{
     padding: 2px;
     }
       
-      
+    @media (min-width: 320px) {
+        .content{
+            font-size: large;
+        }
+        #photos {
+        -webkit-column-count: 2;
+        column-count:         2;
+        }
+    }
+        @media (min-width: 700px) {
+        #photos {
+        -webkit-column-count: 3;
+        column-count:         3;
+        }
+    }
+        @media (min-width: 1000px) {
+        .content{
+            font-size: xx-large;
+        }
+        #photos {
+        -webkit-column-count: 4;
+        column-count:         4;
+        }
+    }
