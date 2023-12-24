@@ -15,35 +15,21 @@
             var current_set = 0;
             var batch_size = 20;
             function populate_pics(n=current_set){
-                var links = data;
+                var links = raw_data;
                 set = links.slice(batch_size*n,batch_size*(n+1));
-                const scrollY = window.scrollY;
-                if(links.length < batch_size*(n+1)){
-                    document.getElementById("more").style.display = "none";
+                if(set.length < batch_size){
+                    clearInterval(loader);
+                    console.log(loading);
                 }
-                set.forEach(element => {
+                set.forEach(async element => {
                     var x = document.createElement("IMG");
                     x.setAttribute("src", "https://drive.google.com/uc?export=view&id="+element);
-                    document.getElementById("photos").appendChild(x);
+                    document.getElementById("photos").append(x);
                 });
-                window.scrollTo(0, scrollY);
                 current_set += 1;
             }
-
-            function add_quote(){
-                var x = document.createElement("H3");
-                x.setAttribute("class","fancy quote bottom");
-                x.innerHTML = quotes[quote_index]
-                document.getElementById("photos").appendChild(x);
-                quote_index=(quote_index+1) % quotes.length;
-            }
-
-            function load_more(){
-                populate_pics();
-                add_quote();
-            }
             
-            // var loader = setInterval(load_more,1000);
+            var loader = setInterval(populate_pics,1000);
         </script>
         
     </head>
@@ -63,31 +49,24 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                       </li>
                       <li class="nav-item text-center">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
+                        <a class="nav-link" href="#">Gallery</a>
                       </li>
                     </ul>
                   </div>
                 </div>
               </nav>
-            <div>
-                <span class="fa-solid fa-heart piece"></span>
-                <p class="text-light">To treasure that which binds us...</p>
-                <p class="fancy" style="margin: 0; padding: 20px;">
-                    To write you an ode is what I willed,<br>
-                    So I picked me arms and set a~sail.<br>
-                    But me volleys fell short, my words fell pale.<br>
-                    For a dozen or two could never prevail,<br>
-                    Over a stream of memories.<br>
+              <div>
+                <p class="fancy" style="margin: 0; padding: 100px 50px;">
+                    Here's a trip down memory lane.<br>
+                    For whenever we feel like going back to the beginning.<br> 
                 </p>
             </div>
         </div>
         <div class="content">
             <div>
-                <h2>And it flows like...</h2>
                 <div id="photos">
                     <!-- rendered in js -->
                 </div>
-                <div><span class="fa-solid fa-down-long fs-1" id="more" onclick="load_more()"></span></div>
             </div>
         </div>
         <div class="footer">

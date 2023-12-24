@@ -132,4 +132,4 @@ let raw_data = ["1-YRehSaqzciNbJMv7QuySgz3EolQFQDo",
     "1fghYgcT28TpI0GvJLLIRR15cZltqdm45",
     "1jqtI496EvJoe5VOVxuLspvgRWZ6PLOSz"];
 
-const data = raw_data.sort(() => Math.random() - 0.5);
+const data = [...raw_data].sort(() => Math.random() - 0.5);
