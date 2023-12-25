@@ -110,6 +110,39 @@ nav{
     box-shadow: 0px 0px 10px white ;
 }
 
+/* heart loader */
+/* HTML: <div class="loader"></div> */
+
+#mask{
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    height: 100vh;
+    width: 100vw;
+}
+
+.loader {
+    cursor: pointer;
+    width: 200px;
+    margin:auto;
+    margin-top: 70px;
+    aspect-ratio: 1;
+    background: linear-gradient(#dc1818 0 0) bottom/100% 0% no-repeat #ccc;
+    -webkit-mask: 
+      radial-gradient(circle at 60% 65%, #000 62%, #0000 65%) top left, 
+      radial-gradient(circle at 40% 65%, #000 62%, #0000 65%) top right, 
+      linear-gradient(to bottom left, #000 42%,#0000 43%) bottom left , 
+      linear-gradient(to bottom right,#000 42%,#0000 43%) bottom right;
+    -webkit-mask-size: 50% 50%;
+    -webkit-mask-repeat: no-repeat;
+    animation: l19 2s infinite linear;
+  }
+  @keyframes l19 {
+      100%,100% {background-size:100% 100%}
+  }
+
 /* photo collage */
 #photos {
     /* Prevent vertical gaps */

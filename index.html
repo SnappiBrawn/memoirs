@@ -21,11 +21,13 @@
                 if(links.length < batch_size*(n+1)){
                     document.getElementById("more").style.display = "none";
                 }
+                var batch = document.createElement("DIV");
                 set.forEach(element => {
                     var x = document.createElement("IMG");
                     x.setAttribute("src", "https://drive.google.com/uc?export=view&id="+element);
-                    document.getElementById("photos").appendChild(x);
+                    batch.appendChild(x);
                 });
+                document.getElementById("photos").appendChild(batch);
                 window.scrollTo(0, scrollY);
                 current_set += 1;
             }
@@ -55,10 +57,18 @@
                     document.getElementById("scroll-to-top").style.visibility= "hidden";
                 }
             })
+        
+            function my_func(){
+                document.getElementById("mask").remove();
+            }
         </script>
         
     </head>
-    <body>
+    <body onload="load_more()">
+        <div id="mask">
+            <div class="loader" onclick="my_func()"></div>
+            <p class="text-light text-center" style="font-size:xx-large">Tap!</p>
+        </div>
         <div class="header">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid">
