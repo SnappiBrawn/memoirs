@@ -42,8 +42,19 @@
                 populate_pics();
                 add_quote();
             }
+
+            function scrollUp(){
+                window.scrollTo(0,0);
+            }
             
-            // var loader = setInterval(load_more,1000);
+            addEventListener("scroll",()=>{
+                if(window.scrollY>window.innerHeight){
+                    document.getElementById("scroll-to-top").style.visibility = "visible";
+                }
+                else{
+                    document.getElementById("scroll-to-top").style.visibility= "hidden";
+                }
+            })
         </script>
         
     </head>
@@ -89,6 +100,8 @@
                 </div>
                 <div><span class="fa-solid fa-down-long fs-1" id="more" onclick="load_more()"></span></div>
             </div>
+        </div>
+        <div style="visibility: hidden;" id="scroll-to-top" onclick="scrollUp()"><span class="fa-solid fa-arrow-up text-light fs-2"></span>
         </div>
         <div class="footer">
             <div class="text-center text-light">Made with <i class="fa-solid fa-heart"></i> by Snappi.</div>
