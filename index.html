@@ -24,11 +24,11 @@
                 var batch = document.createElement("DIV");
                 set.forEach(element => {
                     var x = document.createElement("IMG");
-                    x.setAttribute("src", "https://drive.google.com/uc?export=view&id="+element);
+                    x.src="https://drive.google.com/uc?export=view&id="+element;
                     batch.appendChild(x);
                 });
                 document.getElementById("photos").appendChild(batch);
-                window.scrollTo(0, scrollY);
+                window.scrollTo({left:0, top:scrollY, behavior:"instant"});
                 current_set += 1;
             }
 
