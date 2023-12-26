@@ -24,12 +24,28 @@
                 var batch = document.createElement("DIV");
                 set.forEach(element => {
                     var x = document.createElement("IMG");
-                    x.src="https://drive.google.com/uc?export=view&id="+element;
+                    x.src="https://drive.google.com/thumbnail?id="+element;
+                    x.setAttribute("onclick",`viewModal("${element}")`)
                     batch.appendChild(x);
                 });
                 document.getElementById("photos").appendChild(batch);
                 window.scrollTo({left:0, top:scrollY, behavior:"instant"});
                 current_set += 1;
+            }
+
+            function viewModal(id){
+                var box = document.createElement("div")
+                box.innerHTML = `
+                <div class="light-box">
+                    <span class="fa-solid fa-close close-btn" onclick="closeModal(event)"></span>
+                    <img src="https://drive.google.com/uc?export=view&id=${id}" alt="zoom">
+                </div>
+                `
+                document.body.appendChild(box);
+            }
+
+            function closeModal(e){
+                e.target.parentElement.remove();
             }
 
             function add_quote(){

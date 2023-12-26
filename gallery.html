@@ -19,15 +19,32 @@
                 set = links.slice(batch_size*n,batch_size*(n+1));
                 if(set.length < batch_size){
                     clearInterval(loader);
-                    console.log(loading);
                 }
                 set.forEach(async element => {
                     var x = document.createElement("IMG");
-                    x.setAttribute("src", "https://drive.google.com/uc?export=view&id="+element);
+                    x.src="https://drive.google.com/thumbnail?id="+element;
+                    x.setAttribute("onclick",`viewModal("${element}")`)
                     document.getElementById("photos").append(x);
                 });
                 current_set += 1;
             }
+
+            function viewModal(id){
+                var box = document.createElement("div")
+                box.innerHTML = `
+                <div class="light-box">
+                    <span class="fa-solid fa-close close-btn" onclick="closeModal(event)"></span>
+                    <img src="https://drive.google.com/uc?export=view&id=${id}" alt="zoom">
+                </div>
+                `
+                document.body.appendChild(box);
+            }
+
+            function closeModal(e){
+                e.target.parentElement.remove();
+            }
+
+
             function scrollUp(){
                 window.scrollTo(0,0);
             }
