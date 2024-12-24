@@ -19,30 +19,15 @@ const app = {
   isPrev: false,
   songs: [
     {
-      name: "Whispers in the Moonlight",
+      name: "Love's Our Mistake",
       singer: "Swaroop",
-      path: "./moonlight.mp3",
-      image: "https://www.songscastpedia.com/wp-content/uploads/2021/05/Moonlight-Song-Cast-256x300.jpg",
+      path: "./Love's Our Mistake.mp3",
+      image: "./images/Mistake Cover.jpg",
     },{
       name: "Whispers in the Moonlight",
       singer: "Swaroop",
       path: "./moonlight.mp3",
-      image: "https://www.songscastpedia.com/wp-content/uploads/2021/05/Moonlight-Song-Cast-256x300.jpg",
-    },{
-      name: "Whispers in the Moonlight",
-      singer: "Swaroop",
-      path: "./moonlight.mp3",
-      image: "https://www.songscastpedia.com/wp-content/uploads/2021/05/Moonlight-Song-Cast-256x300.jpg",
-    },{
-      name: "Whispers in the Moonlight",
-      singer: "Swaroop",
-      path: "./moonlight.mp3",
-      image: "https://www.songscastpedia.com/wp-content/uploads/2021/05/Moonlight-Song-Cast-256x300.jpg",
-    },{
-      name: "Whispers in the Moonlight",
-      singer: "Swaroop",
-      path: "./moonlight.mp3",
-      image: "https://www.songscastpedia.com/wp-content/uploads/2021/05/Moonlight-Song-Cast-256x300.jpg",
+      image: "./images/Moonlight Cover.jpg",
     },
   ],
 
